@@ -1,3 +1,4 @@
-const a = "3";
-// const b = "10";
-// console.log(a + b); //310
+console.log(3 || 2 || 1);
+console.log("" || 0 || 1);
+console.log("" || 0 || undefined);
+console.log("" || mull || 3);
