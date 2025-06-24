@@ -47,3 +47,15 @@ let greet = function() {
 };
 
 greet(); // Output: Hi
+
+console.log(typeof(anonymousFunction)); //function
+
+
+let hey = function greetHi() {
+    console.log("Hi AS!");
+};
+//reetHi(); //error
+hey(); //Hi AS
+
+
+//
