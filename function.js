@@ -58,4 +58,9 @@ let hey = function greetHi() {
 hey(); //Hi AS
 
 
-//
+//return in function
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 10)); //15
+console.log(add(5, 10.7)); //15.7
