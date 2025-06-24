@@ -1,4 +1,12 @@
-console.log(3 || 2 || 1);
-console.log("" || 0 || 1);
-console.log("" || 0 || undefined);
-console.log("" || mull || 3);
+var i = 1;
+// while (i <= 10) {
+//     console.log("Hello World!");
+//     i++;
+// }
+
+// //do...while
+// let i = 0;
+// do {
+//     console.log(i);
+//     i++;
+// } while (i < 10);
