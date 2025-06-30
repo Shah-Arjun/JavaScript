@@ -136,3 +136,103 @@ let squares = numbers.map(x => x * x); //the map() array method creates a new ar
 console.log(squares); // Output: [1, 4, 9, 16, 25]
 
 //.map() is used to trasnform each element of array without changing the original array.
+
+
+
+
+//finding sum of numbers using function
+function sum(min, max) {
+    let total = 0;
+    for (let i = min; i <= max; i++) {
+        total += i;
+    }
+    return total;
+}
+console.log(sum(1, 20));
+
+
+
+
+
+
+
+//set(just like math set) and map collections in js
+
+//without set
+const stdId = new Array();
+stdId.push(1);
+stdId.push(2);
+stdId.push(1); //repeat 1
+
+console.log({ stdId })
+console.log(stdId[1]) //to access 2nd element of array
+
+//with set -->set stores unique values
+//set doesnot follow any kind of indexing like array
+const teacherIds = new Set();
+teacherIds.add(1);
+teacherIds.add(2);
+teacherIds.add(1); // do not duplicate this
+
+console.log({ teacherIds });
+
+
+//to access the random elementof set, it need to convertes into array
+
+//conversion of set to arrayand vice-versa is possible
+
+//array to set
+const sId = [1, 2, 3, 4, 4, 3, 4]
+const uniqueSID = new Set(sId)
+console.log({ uniqueSID })
+
+//set to array
+const teacherID = [2, 3, 4, 4, 3, 4]
+const newteacherID = [...uniqueSID] // uniqueSID is the name of set
+console.log({ uniqueSID })
+
+
+
+
+//methods of set
+//add(), delete(), clear()
+const newList = new Set();
+newList.add(3);
+newList.add(7);
+//newList.delete(1) //deletes element 1
+// newList.clear(); //removes all the element from the set
+
+console.log({ newList });
+
+//.size
+console.log({ newListsize: newList.size });
+
+//.keys()
+console.log({ keys: newList.keys() })
+    //or
+console.log({ keys: [...newList.keys()] });
+
+
+//.values()
+console.log({ values: [...newList.values()] });
+
+//Note: In a Set, .keys() and .values() return the same thing — the set values — because sets don’t have key-value pairs like Map.
+
+//.entries()
+console.log({ keys_value: [...newList.entries()] });
+
+
+//.has()
+console.log({ one_is: newList.has(1) }) //to check is 1 in set
+console.log({ three_is: newList.has(3) })
+
+
+
+
+//forEach()
+newList.forEach((value) => {
+    console.log({ value })
+})
+
+
+//Set.prototype.forEach() takes a callback function with 3 parameters: (value, valueAgain, set). The second parameter is the same as the first, for compatibility with Map (which has key, value).
