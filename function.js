@@ -39,7 +39,6 @@ anonymousFunction();
 
 
 
-
 //Function Expression
 //When you assign an anonymous function to a variable, it is known as a function expression. This makes the variable a function, not just a simple variable.
 let greet = function() {
@@ -236,3 +235,62 @@ newList.forEach((value) => {
 
 
 //Set.prototype.forEach() takes a callback function with 3 parameters: (value, valueAgain, set). The second parameter is the same as the first, for compatibility with Map (which has key, value).
+
+
+
+
+
+
+
+/* MAP
+    -> key types 
+    -> key order
+    -> size
+    -> Iteration
+    -> Performance (insertion, deletion)
+*/
+
+newMap = new Map() //creates an empty map
+
+console.log(newMap) //output: Map(0) {}
+
+newMap.set(10, 'value will be here') //Adds a key-value pair: 10 => 'value will be here'
+newMap.set('apple', "It is a fruit")
+newMap.set(5, "five")
+console.log(newMap)
+
+//.get()
+console.log(newMap.get(5)) //get a value of key 5
+
+//.detelt()
+newMap.delete(5) //delete key 5 along with value
+console.log(newMap)
+
+console.log(newMap.get(5)) //undefined
+
+
+//.size
+console.log(newMap.size)
+
+
+//.keys()
+console.log(newMap.keys())
+console.log(newMap.values())
+
+// console.log(newMap.keys(), newMap.values())
+
+
+
+//.entries()
+console.log(newMap.entries())
+
+
+//.forEach()
+newMap.forEach((i) => {
+    console.log(i) //prints value of each key
+})
+
+
+
+//.has()
+console.log(newMap.has(5)) //checks if key 5 exist or not
