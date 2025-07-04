@@ -121,8 +121,51 @@ a = msg2.substring(0, 5);
 b = msg2.substring(7, 2); //starts from 2 to 7
 c = msg2.substring(5); //starts from 5 to last
 d = msg2.substring(-2); //starts from 0
+e = msg2.substring(2.9); //starts from 2
 
 console.log(a)
 console.log(b)
 console.log(c)
 console.log(d)
+console.log(e)
+
+
+
+
+//Practical Use Case: Truncating Long Names
+//consider a practical scenario where you need to display a username on a card, but if the username is too long, you want to truncate it and add ellipses (...)
+const username = "prakashnarsingrao sakari";
+const maxLength = 10;
+let displayName = username;
+
+if (username.length > maxLength) {
+    displayName = username.substring(0, maxLength) + "...";
+}
+
+console.log(displayName); // Output: "prakashnar..."
+
+
+
+
+//Responsive Design Example
+function getDisplayName(username, maxLength) {
+    return username.length > maxLength ? username.substring(0, maxLength) + "..." : username;
+}
+
+const display_ame = getDisplayName(username, maxLength);
+console.log(display_ame); // Output: "prakashnar..."
+
+
+//Substring vs. Slice
+
+//substring: Treats negative indices as 0.
+//slice: Allows negative indices, counting from the end of the string.
+
+// Using substring
+console.log(username.substring(0, 10)); // Output: "prakashnar"
+
+// Using slice
+console.log(username.slice(0, 10)); // Output: "prakashnar"
+
+// Using slice with negative indices
+console.log(username.slice(-10)); // Output: "rao sakari"
