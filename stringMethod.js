@@ -46,3 +46,65 @@ console.log(message.indexOf('JS')); //returns starting index of J i.e. 7
 console.log(message.indexOf('e JS')); //5
 
 console.log(message.indexOf('jS')); //not matched so  -1
+
+
+
+//.includes()
+//syntax =>   string.includes(searchvalue, startIndex)
+var str = "Welcome to JavaScript tutriol.";
+var check = str.includes("to");
+if (check) {
+    console.log("present");
+} else {
+    console.log("not present");
+}
+
+//eg
+var check = str.includes("o", 18);
+console.log(check);
+
+//If the computed index(starting index) i.e the position from which the search will begin is less than 0, the entire array will be searched. 
+var str = "Welcome to GeeksforGeeks.";
+var check = str.includes("o", -2);
+console.log(check);
+
+
+//Practical Application: 
+// 1. Checking for Vowels
+const displayMessage = "I love to code in dark mode.";
+const vowels = "aeiouAEIOU";
+for (let char of displayMessage) {
+    if (vowels.includes(char)) {
+        console.log(`${char} is vowel.`)
+    }
+}
+
+
+//2.Conditional Checks
+if (displayMessage.includes('light')) {
+    console.log('People love to code in light mode')
+} else {
+    console.log('People love to code in dark mode')
+}
+
+
+//3.Using includes for More Complex Conditions
+const msg2 = "Prakash @XYZ.com";
+const word = 'light';
+
+if (msg2.toLowerCase().includes(word.toLowerCase('light'))) {
+    console.log("The string includes the word 'light' in any case .")
+} else {
+    console.log("The string does not include the word 'light'.");
+}
+
+
+
+//.toUpperCase()
+const upper = msg2.toUpperCase();
+console.log(upper);
+
+
+//.toLowerCase()
+const lower = msg2.toLowerCase();
+console.log(lower);
