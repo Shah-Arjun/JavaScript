@@ -108,3 +108,21 @@ console.log(upper);
 //.toLowerCase()
 const lower = msg2.toLowerCase();
 console.log(lower);
+
+
+
+
+
+
+//.substring()
+//The substring method returns a part of the string between the start and end indexes, or to the end of the string if the end index is omitted. The character at the end index is not included.
+//syntax =>   string.substring(Startindex, Endindex)
+a = msg2.substring(0, 5);
+b = msg2.substring(7, 2); //starts from 2 to 7
+c = msg2.substring(5); //starts from 5 to last
+d = msg2.substring(-2); //starts from 0
+
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(d)
