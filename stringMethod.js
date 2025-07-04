@@ -169,3 +169,44 @@ console.log(username.slice(0, 10)); // Output: "prakashnar"
 
 // Using slice with negative indices
 console.log(username.slice(-10)); // Output: "rao sakari"
+
+
+
+
+
+//.trim()
+
+//The trim method removes whitespace from both ends of a string. Whitespace in this context includes spaces, tabs, and any line break characters.
+//Syntax:  str.trim()
+
+//example-1
+function func() {
+    var str = "  JavaScript      ";
+    var st = str.trim();
+    console.log(st);
+}
+func();
+
+
+// Practical Use Cases
+//Cleaning User Input
+//Consider a scenario where you want to get the first six characters of a user's name, but the input might have leading or trailing spaces.
+
+let userInput = "        I love to code    ";
+let trimedStr = userInput.trim();
+
+console.log("user string length: " + userInput.length); //26
+console.log("trimed string length: " + trimedStr.length); //14
+console.log("trimed string: " + trimedStr);
+
+
+//Note: Trim is used to remove white spaces only from the start and end of a string and not from in-between.
+
+
+
+//.trimStart()
+console.log(userInput.trimStart());
+
+
+//.trimEnd()
+console.log(userInput.trimEnd());
