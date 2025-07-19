@@ -155,6 +155,7 @@ students = students.concat(newAdmissions);
 console.log(students); // Output: ["Asha", "John", "Ravi", "Kiran", "Fatima"]
 
 
+
 //🔹 4. Combining Search Results from Multiple Sources
 //✅ Useful when merging results from different APIs or databases.
 
