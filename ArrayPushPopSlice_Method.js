@@ -26,3 +26,24 @@ console.log(arr)    //[]
 
 
 
+// arr.slice(begin, end)
+//The arr. slice() method returns a new array containing a portion of the array on which it is implemented. The original remains unchanged.
+//begin -> starting index from where the portion is to be extracted. If this argument is missing then the method takes begin as 0 as it is the default start value.\
+//end -> the index up to which the portion is to be extracted (excluding the end index). If this argument is not defined then the array till the end is extracted as it is the default end value .If the end value is greater than the length of the array, then the end value changes to the length of the array.
+//Return value: This method returns a new array containing some portion of the original array. 
+
+function func() {
+	// Original Array
+	var arr4 = [23,56,87,32,75,13];
+	// Extracted array
+	var new_arr = arr4.slice(2,4);
+	console.log(arr);
+	console.log("<br>");
+	console.log(new_arr);
+}
+func();
+
+
+//if argument is not passed
+let arr5 = [23,56,87,32,75,13];
+console.log(arr5.slice())  //prints full array
