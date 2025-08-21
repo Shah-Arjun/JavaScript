@@ -78,3 +78,25 @@ class Car {
 
 const car = new Car("Honda");
 console.log(car.getBrand()); // Honda
+
+
+
+
+//Indirect Invocation
+// --The function type has methods: call() and apply(). These methods allow you to set the this value when calling a function.
+
+function getBrand( prefix ) {
+   console.log( prefix + this.brand );
+}
+
+let honda = {            // object 1
+   brand : 'Honda'
+};
+
+let audi = {             // object 2                                         
+   brand : 'Audi'
+};
+
+//First call --->   this = honda, prefix = "It's a ".
+getBrand.call( honda, "It's a Honda" );   // It's a Honda         // .call(thisArg, arg1, arg2, …) ,thisArg → value of this inside the function. , arg1, arg2, … → normal arguments passed to the function.
+getBrand.call( audi, "It's an Audi" );    // Its' an Audi
