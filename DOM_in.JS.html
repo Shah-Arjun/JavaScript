@@ -1,0 +1,110 @@
+<!--
+ # How and When is the DOM Created?
+---- The creation of the DOM follows a specific process during the page load:
+
+    1. HTML Loading: The browser first loads the HTML document.
+    2.  HTML Parsing: As the browser loads the HTML, it begins parsing it from top to bottom.
+   3.  DOM Tree Creation: During parsing, the browser constructs the DOM tree. This tree represents the hierarchical structure of the HTML document.
+
+
+
+#Why is the DOM Tree Created?
+-------The DOM tree is created to allow JavaScript to interact with the HTML document. Since JavaScript cannot directly understand HTML, the DOM provides a structured model that JavaScript can manipulate. This allows for tasks like searching for elements, adding event listeners, modifying content, and updating styles.
+
+#Manipulating the DOM
+------JavaScript interacts with the DOM using various methods:
+
+1   Searching for Elements: Methods like document.getElementById(), document.getElementsByClassName(), and document.querySelector() allow you to select elements in the DOM.
+2   Modifying Elements: Once an element is selected, its content, attributes, and styles can be changed using properties and methods like innerHTML, setAttribute(), and style.
+3   Event Handling: Event listeners can be added to DOM elements to respond to user interactions, such as clicks or key presses.
+
+
+
+#The Role of DOM in Webpage Rendering
+------The DOM is crucial in rendering a webpage. The process is as follows:
+
+1   HTML Loading and Parsing: The browser loads and parses the HTML to create the DOM.
+2   CSS Loading and Parsing: Concurrently, the browser loads and parses the CSS, creating the CSS Object Model (CSSOM).
+3   Render Tree Creation: The DOM and CSSOM are combined to create the render tree, which represents the document's content and styles.
+4   Layout and Painting: The render tree is used to calculate the layout, determining the position and size of each element. Finally, the browser paints the elements onto the screen.
+
+ -->
+
+
+
+
+<!-- #1 Searching the DOM -->
+
+<!-- document.getElementById( element_ID )
+Parameter: This function accepts single parameter element_ID which is used to hold the ID of the element.
+Return Value: It returns the object of the given ID. If no element exists with the given ID then it returns null. -->
+
+
+<!-- Example 1: This example describes the getElementById() method where element_id is used to change the color of the text on clicking the button.
+  -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        DOM getElementById() Method
+    </title>
+
+    <script>
+
+        // Function to change the color of element
+        function geeks() {
+            var demo = document.getElementById("geeks");
+            demo.style.color = "green";
+        }
+    </script>
+</head>
+
+<body style="text-align:center">
+
+    <h1 id="geeks">GeeksforGeeks</h1>
+    <h2>DOM getElementById() Method</h2>
+
+    <!-- Click on the button to change color -->
+    <input type="button" onclick="geeks()" value="Click to change color" />
+
+</body>
+
+</html>
+
+
+
+
+<!-- Example 2: This example describes the getElementById() method where the element_id is used to change the content on clicking the button. -->
+ <!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        DOM getElementById() Method
+    </title>
+  
+    <script>
+  
+        // Function to change content of element
+        function geeks() {
+            var demo = document.getElementById("geeks");
+            demo.innerHTML = "Welcome to GeeksforGeeks!";
+        }
+    </script>
+</head>
+  
+<body style="text-align:center">
+    <h1>GeeksforGeeks</h1>
+    <h2>DOM getElementById() Method</h2>
+    <h3 id="geeks">Hello Geeks!</h3>
+  
+    <!-- Click here to change content -->
+    <input type="button" 
+           onclick="geeks()" 
+           value="Click here to change content" />
+</body>
+  
+</html>
