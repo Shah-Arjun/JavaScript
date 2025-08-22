@@ -1,0 +1,56 @@
+<!-- Assignment 2: Create an input field and take string input in it from the user. Render the input value on the viewport. Create a button and on click of the button reverse the input and display it on the view.
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+</head>
+<body>
+    
+    <form id="">
+        
+        <!-- typed text here -->
+        <div>Typed:
+            <p id="typedText"></p>
+        </div>
+
+        <input type="text" placeholder="Enter any text..." id="userInput">
+        <br>
+
+        <!-- Added type="button" so it doesn’t refresh page -->
+        <button onclick="reverseText()" type="button">Reverse</button>
+
+        <!-- reversed text  -->
+        <div>Reversed:
+            <p id="reverseText"></p>
+        </div>
+    </form>
+
+
+
+<script>
+//shows user input 
+    document.getElementById("userInput").addEventListener("input", function(){
+        document.getElementById("typedText").innerText = this.value;
+    })
+
+
+//reverse the input
+    function reverseText(){
+        let str = document.getElementById("userInput").value;
+        let reversed = str.split("").reverse().join("");
+       document.getElementById("reverseText").innerText = reversed;
+    }
+
+</script>
+
+
+
+
+
+</body>
+</html>
