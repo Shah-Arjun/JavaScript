@@ -1,0 +1,54 @@
+<!-- Event bubbling means that when an event happens on an element (like a button click), it first runs the event on that element, then it bubbles up (moves upward) to its parent elements, then the parent’s parent, and so on until it reaches the <html> root. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Bubbling Example</title>
+</head>
+<body>
+
+  <div id="parent" style="padding:20px; background:lightblue;">
+    Parent Div
+    <button id="child">Click Me</button>
+  </div>
+
+  <script>
+    document.getElementById("child").addEventListener("click", function() {
+      alert("Child Button Clicked!");
+    });
+
+    document.getElementById("parent").addEventListener("click", function() {
+      alert("Parent Div Clicked!");
+    });
+
+    document.body.addEventListener("click", function() {
+      alert("Body Clicked!");
+    });
+  </script>
+</body>
+</html>
+
+
+
+<!-- 🔹 What happens when you click the button?
+    1. Child button’s handler runs first → "Child Button Clicked!"
+    2. Then the event bubbles up → parent div handler runs → "Parent Div Clicked!"
+    3. Then it bubbles up again → body handler runs → "Body Clicked!"
+This is event bubbling. -->
+
+
+<!-- 🔹 How to Stop Bubbling?
+-----------------If you don’t want the event to move up, use:
+        event.stopPropagation();    -->
+
+
+<!-- Example: -->
+
+<!--
+        document.getElementById("child").addEventListener("click", function(event) {
+            alert("Child Button Clicked!");
+            event.stopPropagation();        // Stops bubbling here
+        }); 
+-->
+
+<!-- Now only the child button event will fire, not the parent or body. -->
