@@ -1,0 +1,65 @@
+<!-- The addEventListener() is an inbuilt function in JavaScript which takes the event to listen for, and a second argument to be called whenever the described event gets fired. Any number of event handlers can be added to a single element without overwriting existing event handlers. 
+
+            element.addEventListener(event, listener, useCapture);
+
+event : event can be any valid JavaScript event.Events are used without “on” prefix like use “click” instead of “onclick” or “mousedown” instead of “onmousedown”.
+listener(handler function) : It can be a JavaScript function which respond to the event occur.
+useCapture: It is an optional parameter used to control event propagation. A boolean value is passed where “true” denotes capturing phase and “false” denotes the bubbling phase.
+ -->
+
+
+ <!-- 1.  click event -->
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button id="try">Click here</button>
+    <h1 id="text"></h1>
+
+    <script>
+        document.getElementById("try").addEventListener("click", function () {
+            document.getElementById("text").innerText = "GeeksforGeeks";
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- 2.  mouseover and mouseout event -->
+ <!DOCTYPE html>
+<html>
+  
+<body>
+    <button id="clickIt">Click here</button>
+  
+    <p id="hoverPara">Hover over this Text !</p>
+  
+    <b id="effect">hi, </b>
+  
+    <script>
+        const x = document.getElementById("clickIt");
+        const y = document.getElementById("hoverPara");
+  
+        x.addEventListener("click", RespondClick);
+        y.addEventListener("mouseover", RespondMouseOver);
+        y.addEventListener("mouseout", RespondMouseOut);
+  
+        function RespondMouseOver() {
+            document.getElementById("effect").innerHTML += "MouseOver Event" + "<br>";
+        }
+  
+        function RespondMouseOut() {
+            document.getElementById("effect").innerHTML += "MouseOut Event" + "<br>";
+        }
+  
+        function RespondClick() {
+            document.getElementById("effect").innerHTML += "Click Event" + "<br>";
+        }
+
+    </script>
+</body>
+  
+</html>
