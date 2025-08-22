@@ -1,0 +1,54 @@
+<!-- 
+- Event delegation is a technique in JavaScript where instead of adding event listeners to many child elements, you add one event listener to a common parent and let events bubble up.
+
+- Then, inside the handler, you check which child triggered the event.
+
+- It saves memory, improves performance, and is very useful when elements are created dynamically. 
+-->
+
+
+<!-- 🔹 Example Without Delegation ❌ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Suppose we have a list: -->
+<ul id="menu">
+  <li>Home</li>
+  <li>About</li>
+  <li>Contact</li>
+</ul>
+
+
+<!-- If we want to handle clicks on each <li>, we might write: -->
+<script>  
+
+document.querySelectorAll("#menu li").forEach(item => {
+  item.addEventListener("click", function() {
+    alert("You clicked " + this.textContent);
+  });
+});
+
+</script>
+
+</body>
+</html>
+
+
+<!-- ⚠️ Problem: If new <li> items are added later, they won’t have event listeners. Also, too many listeners = bad for performance.
+ -->
+
+
+
+
+<!-- 🔹 Example With Event Delegation ✅ -->
+document.getElementById("menu").addEventListener("click", function(event) {
+  if (event.target.tagName === "LI") {  // check if li was clicked
+    alert("You clicked " + event.target.textContent);
+  }
+});
