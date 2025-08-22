@@ -1,0 +1,73 @@
+<!-- Assignment 1: Here is a list of items. Add a remove button for every item. With every click of the remove button, remove one item from the list.
+
+let products = [
+ {
+   id: "1",
+   item: "Shirt"
+ },
+ {
+   id: "2",
+   item: "Jeans"
+ },
+ {
+   id: "3",
+   item: "T-shirt"
+ },
+ {
+   id: "4",
+   item: "Denim Jacket"
+ },
+ {
+   id: "5",
+   item: "Casual Shoes"
+ }
+]; 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 1</title>
+</head>
+<body>
+  
+<div id="itemsList"></div>
+<button onclick="remove()">Remove</button>
+<div id="itemrem"></div>
+
+<script>
+let products = [
+ { id: "1", item: "Shirt" },
+ { id: "2", item: "Jeans" },
+ { id: "3", item: "T-shirt" },
+ { id: "4", item: "Denim Jacket" },
+ { id: "5", item: "Casual Shoes" }
+]; 
+
+// show product list initially
+function showProducts() {
+  document.getElementById("itemsList").innerHTML = products
+    .map(p => `<p>${p.id}. ${p.item}</p>`)
+    .join("");
+}
+
+function remove() {
+  if (products.length === 0) {
+    document.getElementById("itemrem").innerText = "No items left!";
+    return;
+  }
+
+  let itemRemoved = products.pop(); // remove last item
+  document.getElementById("itemrem").innerText = "Removed: " + itemRemoved.item;
+  showProducts(); // refresh product list
+}
+
+// initial render
+showProducts();
+</script>
+
+</body>
+</html>
