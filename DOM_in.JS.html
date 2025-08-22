@@ -42,8 +42,6 @@ Return Value: It returns the object of the given ID. If no element exists with t
 
 <!-- Example 1: This example describes the getElementById() method where element_id is used to change the color of the text on clicking the button.
   -->
-
-
 <!DOCTYPE html>
 <html>
 
@@ -76,7 +74,7 @@ Return Value: It returns the object of the given ID. If no element exists with t
 
 
 
-
+ <!-- getElementById() -->
 <!-- Example 2: This example describes the getElementById() method where the element_id is used to change the content on clicking the button. -->
  <!DOCTYPE html>
 <html>
@@ -106,3 +104,111 @@ Return Value: It returns the object of the given ID. If no element exists with t
 </body>
   
 </html>
+
+
+<!-- DOM querySelector(css selector) -->
+    <!-- Get the first <p> element: -->
+    document.querySelector("p");
+
+    <!-- Get the first element with class="example": -->
+    document.querySelector(".example");
+
+
+
+<!-- DOM querySelectorAll() Method -->
+     <!-- To return all matches (not only the first), use the querySelectorAll() instead. -->
+      element.querySelectorAll(css selectors)
+ 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM querySelectorAll() Method</title>
+        <style>
+            #geek {
+              border: 1px solid black;
+              margin: 5px;
+            }
+        </style>
+    </head>
+    <body style = "text-align: center;">
+        <h1 style = "color: green;">GeeksforGeeks</h1>
+        <h2>querySelectorAll() Method</h2>
+        <div id="geek">
+             
+            <p>This is paragraph 1.</p>
+ 
+            <p>This is paragraph 2.</p>
+ 
+        </div>
+        <button onclick="myFunction()">Try it</button>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("geek").querySelectorAll("p");
+                var i;
+                for (i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "green";
+                x[i].style.color = "white";
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+<!-- 1.   Add a background color to the first <p> element: -->
+    <!-- const nodeList= document.querySelectorAll("p");     select all p element  
+          nodeList[0].style.backgroundColor = "red";       add bg color to node[0] i.e. first p -->
+
+
+
+<!--2.   Add a background color to the first <p> element with class="example": -->
+    <!-- const nodeList = document.querySelectorAll("p.example");
+    nodeList[0].style.backgroundColor = "red";  -->
+
+
+<!--3.  Number of elements with class="example": -->
+    <!-- let numb = document.querySelectorAll(".example").length; -->
+
+
+
+<!--4.  Set the background color of all elements with class="example": -->
+    const nodeList = document.querySelectorAll(".example");
+    for (let i = 0; i < nodeList.length; i++) { 
+        nodeList[i].style.backgroundColor="red" ; 
+    }
+
+
+<!-- 5.  Set the background color of all <p> elements: -->
+    let nodeList = document.querySelectorAll("p");
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.backgroundColor = "red";
+    }
+
+
+
+<!--6.  Set the border of all <a> elements with a "target" attribute: -->
+    const nodeList = document.querySelectorAll("a[target]");
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.border = "10px solid red";
+    }
+
+
+
+<!-- Set the background color of every <p> element where the parent is a <div> element: -->
+    const nodeList = document.querySelectorAll("div > p");
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.backgroundColor = "red";
+    }
+
+
+
+<!-- Set the background color of all <h3> and <span> elements: -->
+    const nodeList = document.querySelectorAll("h3, span");
+    for (let i = 0; i < nodeList.length; i++) {
+         nodeList[i].style.backgroundColor = "red";
+    }
